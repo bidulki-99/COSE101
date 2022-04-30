@@ -31,12 +31,12 @@ int main() {
     int correct = 1;
 
     for (int i = 1; i <= 7; i++) {
-        if (check[i] == 0) {
-            if (i == 3 && check[i] < 2)
-                printf("3");
-            else
-                printf("%d", i);
-
+        if (check[i] <= 0 && i != 3) {
+            printf("%d", i);
+            correct = 0;
+        }
+        else if (check[i] < 2 && i == 3) {
+            printf("3");
             correct = 0;
         }
     }
